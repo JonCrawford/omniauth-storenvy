@@ -1,12 +1,30 @@
-# Omniauth::Storenvy
+# OmniAuth Storenvy
 
-TODO: Write a gem description
+An unofficial [OmniAuth](https://github.com/intridea/omniauth) strategy for Storenvy. To use it, you'll need OmniAuth and a registered application on [Storenvy](https://developers.storenvy.com/applications).
+
+## Usage
+
+`OmniAuth::Storenvy` is Rack middleware. Below are examples written specifically for Rails 3.1+, however it can be used in other frameworks based off of Rack (Sinatra, etc). See the [OmniAuth docs](https://github.com/intridea/omniauth) for detailed usage examples.
+
+Create an initializer file, and tell OmniAuth you'd like to register Etsy as a provider:
+
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :storenvy, ENV['STORENVY_TOKEN'], ENV['STORENVY_SECRET']
+    end
+
+Optionally, you may also pass in space-separated [Permission Scopes](https://developers.storenvy.com/authentication#scopes):
+
+
+    Rails.application.config.middleware.use OmniAuth::Builder do
+      provider :storenvy, ENV['STORENVY_TOKEN'], ENV['STORENVY_SECRET'], :scope => 'user store_read store_write'
+    end
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add OmniAuth and OmniAuth::Storenvy to your application's Gemfile:
 
-    gem 'omniauth-storenvy'
+    gem 'omniauth', '~>1.0'
+    gem 'omniauth-storenvy', '~>0.1.0'
 
 And then execute:
 
@@ -14,11 +32,14 @@ And then execute:
 
 Or install it yourself as:
 
+    $ gem install omniauth
     $ gem install omniauth-storenvy
 
-## Usage
+`OmniAuth::Storenvy` has only been test on Ruby 1.9.2
 
-TODO: Write usage instructions here
+## Examples
+
+Check out a super-simple Sinatra example [here](https://github.com/ohokay/omniauth-storenvy/blob/master/examples/config.ru).
 
 ## Contributing
 
