@@ -16,14 +16,12 @@ module OmniAuth
 
       info do
         {
+          id: raw_info["id"],
           email: raw_info["email"],
           login: raw_info["login"],
           bio: raw_info["bio"],
           location: raw_info["location"],
-          gender: raw_info["gender"],
-          twitter: raw_info["twitter"],
-          facebook: raw_info["facebook"],
-          birthday: raw_info["birthday"]
+          gender: raw_info["gender"]
         }
       end
 
