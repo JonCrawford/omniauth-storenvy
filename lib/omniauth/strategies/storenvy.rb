@@ -4,6 +4,7 @@ module OmniAuth
   module Strategies
     class Storenvy < OmniAuth::Strategies::OAuth2
       option :name, "storenvy"
+      option :authorize_options, [:scope]
       option :client_options, {
         :site => "https://api.storenvy.com",
         :authorize_url => "https://www.storenvy.com/oauth/authorize"
