@@ -6,7 +6,7 @@ An unofficial [OmniAuth](https://github.com/intridea/omniauth) strategy for Stor
 
 `OmniAuth::Storenvy` is Rack middleware. Below are examples written specifically for Rails 3.1+, however it can be used in other frameworks based off of Rack (Sinatra, etc). See the [OmniAuth docs](https://github.com/intridea/omniauth) for detailed usage examples.
 
-Create an initializer file, and tell OmniAuth you'd like to register Etsy as a provider:
+Create an initializer file, and tell OmniAuth you'd like to register Storenvy as a provider:
 
     Rails.application.config.middleware.use OmniAuth::Builder do
       provider :storenvy, ENV['STORENVY_TOKEN'], ENV['STORENVY_SECRET']
